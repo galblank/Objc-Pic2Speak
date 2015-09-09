@@ -54,11 +54,19 @@
         item.restorationIdentifier = [NSString stringWithFormat:@"%d",i];
         
         
+        UITapGestureRecognizer *tapOnItem = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedOnItem:)];
+        [item addGestureRecognizer:tapOnItem];
         
         [usersScrollView addSubview:item];
         
         usersScrollView.contentSize = CGSizeMake(previousX + [UIImage imageNamed:@"defaultuser"].size.width + padding,self.view.frame.size.height);
     }
+}
+
+-(void)tappedOnItem:(UIGestureRecognizer*)gesture
+{
+    NSInteger t = gesture.view.tag;
+    NSLog(@"tapped %ld",(long)t);
 }
 
 - (void)didReceiveMemoryWarning {

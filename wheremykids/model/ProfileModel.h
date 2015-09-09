@@ -14,6 +14,7 @@
 
 @property(nonatomic,strong)NSString *username;
 @property(nonatomic,strong)NSNumber *userage;
+@property(nonatomic,strong)NSNumber *userpasscode;
 @property(nonatomic)CLLocationCoordinate2D userlocation;
 @property(nonatomic,strong)NSString *teachername;
 @property(nonatomic,strong)NSString *userimage;

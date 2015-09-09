@@ -11,7 +11,7 @@
 
 @implementation ProfileModel
 
-@synthesize username,teachername,userlocation,userimage,userID,userage;
+@synthesize username,teachername,userlocation,userimage,userID,userage,userpasscode;
 
 
 -(NSMutableDictionary*)userToDic
@@ -27,6 +27,7 @@
         [dictionaryUser setObject:[NSNumber numberWithDouble:userlocation.longitude] forKey:@"longitude"];
     }
     [dictionaryUser setObject:[NSNumber numberWithInt:userID] forKey:@"userID"];
+    [dictionaryUser setObject:userpasscode!=nil?userpasscode:[NSNumber numberWithInt:1234]       forKey:@"userpasscode"];
     
     return dictionaryUser;
 }
@@ -38,7 +39,7 @@
     teachername         = [dicuser objectForKey:@"teachername"];
     userimage           = [dicuser objectForKey:@"userimage"];
     userage             = [dicuser objectForKey:@"userage"];
-    
+    userpasscode        = [dicuser objectForKey:@"userpasscode"];
     if([dicuser objectForKey:@"latitude"] &&  [dicuser objectForKey:@"longitude"]){
         userlocation = CLLocationCoordinate2DMake([[dicuser objectForKey:@"latitude"] doubleValue],[[dicuser objectForKey:@"longitude"] doubleValue]);
     }

@@ -95,7 +95,7 @@ AppDelegate *shared = nil;
     NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
     self.nGlobalUserCounter  = [standardUserDefaults objectForKey:USERS_COUNTER_ID];
     if(self.nGlobalUserCounter == nil || self.nGlobalUserCounter.intValue == 0){
-        self.nGlobalUserCounter = [NSNumber numberWithInt:5];
+        self.nGlobalUserCounter = [NSNumber numberWithInt:1];
     }
 }
 
