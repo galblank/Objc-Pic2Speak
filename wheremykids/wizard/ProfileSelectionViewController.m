@@ -67,6 +67,7 @@
 {
     NSInteger t = gesture.view.tag;
     NSLog(@"tapped %ld",(long)t);
+    
 }
 
 - (void)didReceiveMemoryWarning {
