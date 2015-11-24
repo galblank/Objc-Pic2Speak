@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Gal Blank. All rights reserved.
 //
 
-#import "ASIHTTPRequest.h"
+
 #import <Foundation/Foundation.h>
 #import "ASIHTTPRequest.h"
 #import "ASIS3Request.h"
