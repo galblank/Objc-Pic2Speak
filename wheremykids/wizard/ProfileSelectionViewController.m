@@ -36,20 +36,27 @@
 }
 
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscape;
+}
+
 -(void)loadImagesForJustView
 {
-    CGFloat padding = 20.0;
+    CGFloat horizontalpadding = 20.0;
+    CGFloat topPadding = 80.0;
+    CGFloat bottomPadding = topPadding * 2;
+    CGFloat width = self.view.frame.size.width / 3;
     CGFloat previousX = 0;
-    for(int i=0;i< [AppDelegate shared].nGlobalUserCounter.intValue; i++) {
+    for(int i=0;i< 5/*[AppDelegate shared].nGlobalUserCounter.intValue*/; i++) {
         
-        CGFloat x = previousX > 0?previousX + [UIImage imageNamed:@"defaultuser"].size.width:0;
-        UIImage *assetimage = [UIImage imageNamed:@"defaultuser"];
-        NSLog(@"%f",previousX + x + padding);
-        ScrollItemView *item = [[ScrollItemView alloc] initWithFrame:CGRectMake(x + padding,(self.view.frame.size.height - [UIImage imageNamed:@"defaultuser"].size.height) / 2,[UIImage imageNamed:@"defaultuser"].size.width, [UIImage imageNamed:@"defaultuser"].size.height) andType:ITEMTYPE_USER];
-        
+        CGFloat x = previousX > 0?previousX + width:0;
+        NSLog(@"%f",previousX + x + horizontalpadding);
+        float height = self.view.frame.size.height - (topPadding + bottomPadding);
+        ScrollItemView *item = [[ScrollItemView alloc] initWithFrame:CGRectMake(x + horizontalpadding,topPadding,width,height) andType:ITEMTYPE_USER];
+        item.backgroundColor = [UIColor greenColor];
         previousX = item.frame.origin.x;
         
-        item.clipsToBounds = YES;
+        //item.clipsToBounds = YES;
         item.tag = i;
         item.restorationIdentifier = [NSString stringWithFormat:@"%d",i];
         
@@ -59,7 +66,7 @@
         
         [usersScrollView addSubview:item];
         
-        usersScrollView.contentSize = CGSizeMake(previousX + [UIImage imageNamed:@"defaultuser"].size.width + padding,self.view.frame.size.height);
+        usersScrollView.contentSize = CGSizeMake(previousX + width + horizontalpadding,self.view.frame.size.height);
     }
 }
 
@@ -67,6 +74,7 @@
 {
     NSInteger t = gesture.view.tag;
     NSLog(@"tapped %ld",(long)t);
+    [[AppDelegate shared] chooseImage];
     
 }
 

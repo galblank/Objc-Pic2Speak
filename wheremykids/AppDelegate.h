@@ -12,7 +12,7 @@
 #import "CommManager.h"
 #import "ProfileModel.h"
 
-
+#define systemFont @"ChalkboardSE-Light"
 #define PASSCODE @"PASSCODE"
 #define USERS_COUNTER_ID        @"USERS_COUNTER_ID"
 #define NEW_USER_ID             1000
@@ -20,7 +20,7 @@
 
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,CommunicationManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,CommunicationManagerDelegate,UIImagePickerControllerDelegate>
 {
     WaitingScreenView * mWaitingScreen;
     ProfileSelectionViewController *profileVC;
@@ -60,5 +60,7 @@
 -(NSMutableArray*)readUsers;
 - (void)getEmNumsFinishedSuccess:(NSString*)response;
 -(void)saveUser:(ProfileModel*)user;
+- (void)selectPhoto;
+-(void)chooseImage;
 @end
 
