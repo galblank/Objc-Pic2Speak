@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "00192AFD9027AB9D5C576546D2881B2405281947",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "00192AFD9027AB9D5C576546D2881B2405281947" : 0,
+    "A5A000434599CE98D278525BF8477FDCCE286672" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8ABE837D-74AF-4A76-9D1A-088AF859674C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "00192AFD9027AB9D5C576546D2881B2405281947" : "Pic2Speak",
+    "A5A000434599CE98D278525BF8477FDCCE286672" : "Pic2Speak\/mobileSDK\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Pic2Speak",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Pic2Speak.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/galblank\/Pic2Speak.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "00192AFD9027AB9D5C576546D2881B2405281947"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/1stpaygatewayllc\/mobileSDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A5A000434599CE98D278525BF8477FDCCE286672"
+    }
+  ]
+}

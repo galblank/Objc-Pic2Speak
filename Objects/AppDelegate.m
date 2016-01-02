@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SBJson.h"
 
+
 @import Photos;
 
 
@@ -303,13 +304,36 @@ AppDelegate *shared = nil;
 
 -(void)chooseImage
 {
-    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Select Option:" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Cancel" otherButtonTitles:
-                            @"Select existing",
-                            @"Take picture",
+    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Select Option:",nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",nil) destructiveButtonTitle:nil otherButtonTitles:
+                            NSLocalizedString(@"Select existing",nil),
+                            NSLocalizedString(@"Take picture",nil),
                             nil];
     popup.tag = 1;
-    [popup showInView:[self topViewController].view];
+    [popup showInView:[UIApplication sharedApplication].keyWindow];
 }
+
+- (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"%d",buttonIndex);
+    switch (popup.tag) {
+        case 1: {
+            switch (buttonIndex) {
+                case 0:
+                    [self selectPhoto];
+                    break;
+                case 1:
+                    [self takePhoto];
+                    break;
+                default:
+                    break;
+            }
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+
 - (void)takePhoto {
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
