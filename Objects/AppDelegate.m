@@ -309,7 +309,7 @@ AppDelegate *shared = nil;
                             NSLocalizedString(@"Take picture",nil),
                             nil];
     popup.tag = 1;
-    [popup showInView:[UIApplication sharedApplication].keyWindow];
+    [popup showInView:[self topViewController].navigationController.navigationBar];
 }
 
 - (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -346,14 +346,13 @@ AppDelegate *shared = nil;
 }
 
 - (void)selectPhoto {
-    
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     UIPopoverController * _popover = [[UIPopoverController alloc] initWithContentViewController:picker];
-    [_popover presentPopoverFromRect:CGRectMake(0, 0, 0, 0) inView:[self topViewController].view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    [_popover presentPopoverFromRect:CGRectMake(0, 0, 0, 0) inView:[self topViewController].view  permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
