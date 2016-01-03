@@ -27,7 +27,7 @@
     usersScrollView.minimumZoomScale=0.5;
     usersScrollView.maximumZoomScale=6.0;
     usersScrollView.translatesAutoresizingMaskIntoConstraints  = NO;
-    
+    selectedStudentIndex = -1;
     [self.view addSubview:usersScrollView];
     
     [self loadImagesForJustView];
@@ -39,6 +39,23 @@
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskLandscape;
 }
+
+
+-(void)selectedImage:(NSNotification*)notify
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"internal.selectedimage" object:nil];
+    Message * msg = [notify.userInfo objectForKey:@"message"];
+    NSLog(@"Selected Image: %@",[msg.params objectForKey:@"image"]);
+    if(selectedStudentIndex >= 0){
+        for(ScrollItemView * item in usersScrollView.subviews){
+            if(item.tag == selectedStudentIndex){
+                item.imageView.image = [msg.params objectForKey:@"image"];
+                break;
+            }
+        }
+    }
+}
+
 
 -(void)loadImagesForJustView
 {
@@ -72,10 +89,10 @@
 
 -(void)tappedOnItem:(UIGestureRecognizer*)gesture
 {
-    NSInteger t = gesture.view.tag;
-    NSLog(@"tapped %ld",(long)t);
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedImage:) name:@"internal.selectedimage" object:nil];
+    selectedStudentIndex = gesture.view.tag;
+    NSLog(@"tapped %ld",(long)selectedStudentIndex);
     [[AppDelegate shared] chooseImage];
-    
 }
 
 - (void)didReceiveMemoryWarning {

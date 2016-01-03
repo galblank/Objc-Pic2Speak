@@ -11,6 +11,8 @@
 #import "ProfileSelectionViewController.h"
 #import "CommManager.h"
 #import "ProfileModel.h"
+#import "Pic2Speak-Swift.h"
+#import "MessageDispatcher.h"
 
 #define systemFont @"ChalkboardSE-Light"
 #define PASSCODE @"PASSCODE"
@@ -20,7 +22,7 @@
 
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,CommunicationManagerDelegate,UIImagePickerControllerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,CommunicationManagerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
     WaitingScreenView * mWaitingScreen;
     ProfileSelectionViewController *profileVC;

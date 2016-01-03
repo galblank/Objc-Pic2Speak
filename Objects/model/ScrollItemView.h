@@ -15,8 +15,11 @@ typedef enum {
 }ItemType;
 
 @interface ScrollItemView : UIView
+{
 
-//methods
+}
+
+@property(nonatomic,strong)UIImageView *imageView;
 
 - (id)initWithFrame:(CGRect)frame andType:(ItemType)iType;
 @end

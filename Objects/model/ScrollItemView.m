@@ -11,6 +11,8 @@
 
 @implementation ScrollItemView
 
+@synthesize imageView;
+
 - (id)initWithFrame:(CGRect)frame andType:(ItemType)iType
 {
     self = [super initWithFrame:frame];
@@ -21,18 +23,18 @@
         switch (iType) {
             case ITEMTYPE_MAIN:
             {
-                UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [UIImage imageNamed:@"smiley"].size.width, [UIImage imageNamed:@"smiley"].size.height)];
-                imageView.image = [UIImage imageNamed:@"smiley"];
-                imageView.contentMode = UIViewContentModeScaleAspectFit;
-                imageView.userInteractionEnabled = YES;
-                [self addSubview:imageView];
+                self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [UIImage imageNamed:@"smiley"].size.width, [UIImage imageNamed:@"smiley"].size.height)];
+                self.imageView.image = [UIImage imageNamed:@"smiley"];
+                self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+                self.imageView.userInteractionEnabled = YES;
+                [self addSubview:self.imageView];
             }
                 break;
             case ITEMTYPE_USER:
             {
                 UIImage * smiley = [UIImage imageNamed:@"smiley"];
-                UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.frame.size.width - smiley.size.width) / 2, 20, [UIImage imageNamed:@"smiley"].size.width, [UIImage imageNamed:@"smiley"].size.height)];
-                imageView.image = [UIImage imageNamed:@"smiley"];
+                self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.frame.size.width - smiley.size.width) / 2, 20, smiley.size.width, smiley.size.height)];
+                imageView.image = smiley;
                 imageView.contentMode = UIViewContentModeScaleAspectFit;
                 imageView.userInteractionEnabled = YES;
                 [self addSubview:imageView];

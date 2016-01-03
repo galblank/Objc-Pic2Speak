@@ -5,8 +5,8 @@
 //
 
 #import "MessageDispatcher.h"
-#import <pos-Swift.h>
-#import "POS-Bridging-Header.h"
+#import <Pic2Speak-Swift.h>
+#import "Pic2Speak-Bridgin-Header.h"
 #import "RegexKitLite.h"
 
 @implementation MessageDispatcher

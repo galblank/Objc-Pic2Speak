@@ -304,12 +304,14 @@ AppDelegate *shared = nil;
 
 -(void)chooseImage
 {
+    [self selectPhoto];
+    /*
     UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Select Option:",nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel",nil) destructiveButtonTitle:nil otherButtonTitles:
                             NSLocalizedString(@"Select existing",nil),
                             NSLocalizedString(@"Take picture",nil),
                             nil];
     popup.tag = 1;
-    [popup showInView:[self topViewController].navigationController.navigationBar];
+    [popup showInView:[self topViewController].view];*/
 }
 
 - (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -345,14 +347,16 @@ AppDelegate *shared = nil;
     
 }
 
+-(void)selectedImage:(NSNotification*)notify
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"internal.selectedimage" object:nil];
+    Message * msg = [notify.userInfo objectForKey:@"message"];
+    NSLog(@"Selected Image: %@",[msg.params objectForKey:@"image"]);
+}
+
 - (void)selectPhoto {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    
-    UIPopoverController * _popover = [[UIPopoverController alloc] initWithContentViewController:picker];
-    [_popover presentPopoverFromRect:CGRectMake(0, 0, 0, 0) inView:[self topViewController].view  permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    PhotoBrowser * pb = [[PhotoBrowser alloc] initWithReturnImageSize:CGSizeMake(400, 400)];
+    [pb launch];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

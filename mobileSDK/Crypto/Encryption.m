@@ -12,6 +12,7 @@
 #import "NSString+Helper.h"
 #import "NSData+Helper.h"
 #import "GTMBase64.h"
+#import <NSData+Base64.h>
 
 static Encryption *sharedSampleSingletonDelegate = nil;
 

@@ -34,7 +34,7 @@ class PhotoBrowser: UIViewController
     
     var returnImageSize = CGSize(width: 100, height: 100)
     
-    weak var delegate: PhotoBrowserDelegate?
+    var delegate: PhotoBrowserDelegate?
     
     required init(returnImageSize: CGSize)
     {
@@ -300,14 +300,21 @@ class PhotoBrowser: UIViewController
     
     func imageRequestResultHandler(image: UIImage?, properties: [NSObject: AnyObject]?)
     {
+        let tempImage = image! as UIImage
         if let delegate = delegate, image = image, selectedAssetLocalIdentifier = selectedAsset?.localIdentifier
         {
             PhotoBrowser.executeInMainQueue
             {
                 delegate.photoBrowserDidSelectImage(image, localIdentifier: selectedAssetLocalIdentifier)
+                
             }
         }
         // TODO : Handle no image case (asset is broken in iOS)
+        let msg:Message = Message()
+        msg.routingKey = "internal.selectedimage"
+        msg.params = ["image" : tempImage]
+        msg.ttl = 0.1
+        MessageDispatcher.sharedInstance().addMessageToBus(msg)
         
         activityIndicator.stopAnimating()
         selectedAsset = nil
