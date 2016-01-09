@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SBJson.h"
-
+#import "CouchbaseEvents.h"
 
 @import Photos;
 
@@ -117,6 +117,11 @@ AppDelegate *shared = nil;
     mainNavigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     self.window.rootViewController = mainNavigationController;
+    
+    
+    CouchbaseEvents* cbevents = [[CouchbaseEvents alloc] init];
+    [cbevents helloCBL];
+    
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 

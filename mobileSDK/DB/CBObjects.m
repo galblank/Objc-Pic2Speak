@@ -1,0 +1,43 @@
+//
+//  CBObjects.m
+//  Pic2Speak
+//
+//  Created by Gal Blank on 1/8/16.
+//  Copyright © 2016 Gal Blank. All rights reserved.
+//
+
+#import "CBObjects.h"
+
+@implementation CBObjects
+
+static id sharedInstance;
+
++ (instancetype)sharedInstance {
+    static dispatch_once_t once;
+    
+    dispatch_once(&once, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        NSError *error;
+        self.manager = [CBLManager sharedInstance];
+        if (!self.manager) {
+            NSLog(@"Cannot create shared instance of CBLManager");
+            return nil;
+        }
+        self.database = [self.manager databaseNamed:@"couchbaseevents" error:&error];
+        if (!self.database) {
+            NSLog(@"Cannot create database. Error message: %@", error.localizedDescription);
+            return nil;
+        }
+    }
+    return self;
+}
+
+
+@end

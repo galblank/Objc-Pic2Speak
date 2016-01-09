@@ -1456,6 +1456,16 @@
 		C14224A71C39B5E900A0E27D /* PolymorphicSwiperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C142247F1C39B5E900A0E27D /* PolymorphicSwiperService.swift */; };
 		C14224A81C39B5E900A0E27D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C14224801C39B5E900A0E27D /* README.md */; };
 		C14224AB1C39B69600A0E27D /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = C14224AA1C39B69600A0E27D /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C14224AF1C3CA8A500A0E27D /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C14224AE1C3CA8A500A0E27D /* DBManager.m */; };
+		C14224B11C3CA8D100A0E27D /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C14224B01C3CA8D100A0E27D /* db.sqlite */; };
+		C14224B31C3CAB6400A0E27D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C14224B21C3CAB6400A0E27D /* libsqlite3.0.tbd */; };
+		C14224B51C409F1F00A0E27D /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C14224B41C409F1F00A0E27D /* CouchbaseLite.framework */; };
+		C14224B81C40A2A200A0E27D /* CouchbaseEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = C14224B71C40A2A200A0E27D /* CouchbaseEvents.m */; };
+		C14224BB1C40AA2900A0E27D /* CBObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = C14224BA1C40AA2900A0E27D /* CBObjects.m */; };
+		C14224BD1C40B14600A0E27D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C14224BC1C40B14600A0E27D /* CFNetwork.framework */; };
+		C14224BF1C40B36E00A0E27D /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C14224BE1C40B36E00A0E27D /* libz.1.2.5.tbd */; };
+		C14224C11C40B37800A0E27D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C14224C01C40B37800A0E27D /* Security.framework */; };
+		C14224C31C40B39100A0E27D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C14224C21C40B39100A0E27D /* SystemConfiguration.framework */; };
 		C14243921C308F1B00480DA3 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C14243911C308F1B00480DA3 /* Photos.framework */; };
 		C142440C1C30D4DB00480DA3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C142440B1C30D4DB00480DA3 /* ExternalAccessory.framework */; };
 		CE4BDFD219AE65A000BBFABA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4BDFD119AE65A000BBFABA /* MapKit.framework */; };
@@ -2992,6 +3002,19 @@
 		C14224801C39B5E900A0E27D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C14224A91C39B69600A0E27D /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		C14224AA1C39B69600A0E27D /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		C14224AD1C3CA8A500A0E27D /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		C14224AE1C3CA8A500A0E27D /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		C14224B01C3CA8D100A0E27D /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		C14224B21C3CAB6400A0E27D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		C14224B41C409F1F00A0E27D /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLite.framework; sourceTree = "<group>"; };
+		C14224B61C40A2A200A0E27D /* CouchbaseEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchbaseEvents.h; sourceTree = "<group>"; };
+		C14224B71C40A2A200A0E27D /* CouchbaseEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchbaseEvents.m; sourceTree = "<group>"; };
+		C14224B91C40AA2900A0E27D /* CBObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBObjects.h; sourceTree = "<group>"; };
+		C14224BA1C40AA2900A0E27D /* CBObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBObjects.m; sourceTree = "<group>"; };
+		C14224BC1C40B14600A0E27D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C14224BE1C40B36E00A0E27D /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		C14224C01C40B37800A0E27D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C14224C21C40B39100A0E27D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C14243911C308F1B00480DA3 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		C142440B1C30D4DB00480DA3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		CE4BDFD119AE65A000BBFABA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -3007,6 +3030,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C14224C31C40B39100A0E27D /* SystemConfiguration.framework in Frameworks */,
+				C14224C11C40B37800A0E27D /* Security.framework in Frameworks */,
+				C14224BF1C40B36E00A0E27D /* libz.1.2.5.tbd in Frameworks */,
+				C14224BD1C40B14600A0E27D /* CFNetwork.framework in Frameworks */,
+				C14224B31C3CAB6400A0E27D /* libsqlite3.0.tbd in Frameworks */,
 				C14222DE1C386A7500A0E27D /* libicucore.A.tbd in Frameworks */,
 				C142440C1C30D4DB00480DA3 /* ExternalAccessory.framework in Frameworks */,
 				C14243921C308F1B00480DA3 /* Photos.framework in Frameworks */,
@@ -3024,6 +3052,7 @@
 				C11055EB1C041259009F0D5A /* AWSSNS.framework in Frameworks */,
 				C11055E11C041259009F0D5A /* AWSDynamoDB.framework in Frameworks */,
 				C11055E61C041259009F0D5A /* AWSMachineLearning.framework in Frameworks */,
+				C14224B51C409F1F00A0E27D /* CouchbaseLite.framework in Frameworks */,
 				C11055E21C041259009F0D5A /* AWSEC2.framework in Frameworks */,
 				CE53D3FC199E580000C2A6C3 /* CoreGraphics.framework in Frameworks */,
 				CE53D3FE199E580000C2A6C3 /* UIKit.framework in Frameworks */,
@@ -4735,6 +4764,7 @@
 		C142242B1C39B5E900A0E27D /* mobileSDK */ = {
 			isa = PBXGroup;
 			children = (
+				C14224AC1C3CA8A500A0E27D /* DB */,
 				C142242C1C39B5E900A0E27D /* Crypto */,
 				C142243D1C39B5E900A0E27D /* Dispatcher */,
 				C14224451C39B5E900A0E27D /* Extensions */,
@@ -4924,6 +4954,21 @@
 			path = Swipers;
 			sourceTree = "<group>";
 		};
+		C14224AC1C3CA8A500A0E27D /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				C14224B41C409F1F00A0E27D /* CouchbaseLite.framework */,
+				C14224B01C3CA8D100A0E27D /* db.sqlite */,
+				C14224AD1C3CA8A500A0E27D /* DBManager.h */,
+				C14224AE1C3CA8A500A0E27D /* DBManager.m */,
+				C14224B61C40A2A200A0E27D /* CouchbaseEvents.h */,
+				C14224B71C40A2A200A0E27D /* CouchbaseEvents.m */,
+				C14224B91C40AA2900A0E27D /* CBObjects.h */,
+				C14224BA1C40AA2900A0E27D /* CBObjects.m */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
 		CE53D3ED199E580000C2A6C3 = {
 			isa = PBXGroup;
 			children = (
@@ -4948,6 +4993,11 @@
 		CE53D3F8199E580000C2A6C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C14224C21C40B39100A0E27D /* SystemConfiguration.framework */,
+				C14224C01C40B37800A0E27D /* Security.framework */,
+				C14224BE1C40B36E00A0E27D /* libz.1.2.5.tbd */,
+				C14224BC1C40B14600A0E27D /* CFNetwork.framework */,
+				C14224B21C3CAB6400A0E27D /* libsqlite3.0.tbd */,
 				C14222DD1C386A7500A0E27D /* libicucore.A.tbd */,
 				C142440B1C30D4DB00480DA3 /* ExternalAccessory.framework */,
 				C14243911C308F1B00480DA3 /* Photos.framework */,
@@ -5970,6 +6020,7 @@
 				C110542F1C041259009F0D5A /* AWSS3Initiator.html in Resources */,
 				C11055ED1C041259009F0D5A /* Amazon Software License.txt in Resources */,
 				C11055471C041259009F0D5A /* AWSEC2CurrencyCodeValues.html in Resources */,
+				C14224B11C3CA8D100A0E27D /* db.sqlite in Resources */,
 				C110517D1C041259009F0D5A /* AWSCognitoSyncSetCognitoEventsRequest.html in Resources */,
 				C11050DC1C041259009F0D5A /* AWSAutoScalingDeletePolicyType.html in Resources */,
 				C11050E11C041259009F0D5A /* AWSAutoScalingDescribeAutoScalingInstancesType.html in Resources */,
@@ -6439,6 +6490,7 @@
 				C14224901C39B5E900A0E27D /* WaitingOverlay.swift in Sources */,
 				C142248F1C39B5E900A0E27D /* PhotoBrowserDelegate.swift in Sources */,
 				C142249C1C39B5E900A0E27D /* AFNetworkActivityIndicatorManager.m in Sources */,
+				C14224B81C40A2A200A0E27D /* CouchbaseEvents.m in Sources */,
 				C14223741C386D7B00A0E27D /* Globals.m in Sources */,
 				C14224A71C39B5E900A0E27D /* PolymorphicSwiperService.swift in Sources */,
 				C14224811C39B5E900A0E27D /* CryptoHelper.m in Sources */,
@@ -6463,12 +6515,14 @@
 				C14223811C386D7B00A0E27D /* SBJsonStreamWriterAccumulator.m in Sources */,
 				C142248D1C39B5E900A0E27D /* ImageItemRenderer.swift in Sources */,
 				C14224A21C39B5E900A0E27D /* UIRefreshControl+AFNetworking.m in Sources */,
+				C14224AF1C3CA8A500A0E27D /* DBManager.m in Sources */,
 				C14224981C39B5E900A0E27D /* AFURLRequestSerialization.m in Sources */,
 				C14224891C39B5E900A0E27D /* MessageDispatcher.m in Sources */,
 				C14224951C39B5E900A0E27D /* AFNetworkReachabilityManager.m in Sources */,
 				C11055F21C041259009F0D5A /* README.md in Sources */,
 				C142238D1C386D7B00A0E27D /* PortViewController.m in Sources */,
 				C14223911C386D7B00A0E27D /* StudentProfileViewController.m in Sources */,
+				C14224BB1C40AA2900A0E27D /* CBObjects.m in Sources */,
 				C142238A1C386D7B00A0E27D /* ScrollItemView.m in Sources */,
 				C14223921C386D7B00A0E27D /* WaitingScreenView.m in Sources */,
 				C142237A1C386D7B00A0E27D /* SBJsonParser.m in Sources */,
@@ -6554,6 +6608,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "2c875c51-c775-4a26-ac92-37d51c287860";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Pic2Speak-Bridgin-Header.h";
@@ -6592,6 +6647,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "2c875c51-c775-4a26-ac92-37d51c287860";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Pic2Speak-Bridgin-Header.h";
@@ -6605,6 +6661,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -6612,6 +6670,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/aws-ios-sdk-2.2.6/frameworks",
 					"$(PROJECT_DIR)/aws-ios-sdk-2.2.6/frameworks/extras",
+					"$(PROJECT_DIR)/mobileSDK/DB",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting Files/Pic2Speak-Prefix.pch";
@@ -6623,6 +6682,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Pic2Speak-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.galblank.sayit;
 				PRODUCT_NAME = Pic2Speak;
 				PROVISIONING_PROFILE = "2c875c51-c775-4a26-ac92-37d51c287860";
@@ -6636,6 +6696,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -6643,6 +6705,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/aws-ios-sdk-2.2.6/frameworks",
 					"$(PROJECT_DIR)/aws-ios-sdk-2.2.6/frameworks/extras",
+					"$(PROJECT_DIR)/mobileSDK/DB",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting Files/Pic2Speak-Prefix.pch";
@@ -6654,6 +6717,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Pic2Speak-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.galblank.sayit;
 				PRODUCT_NAME = Pic2Speak;
 				PROVISIONING_PROFILE = "2c875c51-c775-4a26-ac92-37d51c287860";
