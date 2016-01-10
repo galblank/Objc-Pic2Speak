@@ -1466,6 +1466,7 @@
 		C14224BF1C40B36E00A0E27D /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C14224BE1C40B36E00A0E27D /* libz.1.2.5.tbd */; };
 		C14224C11C40B37800A0E27D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C14224C01C40B37800A0E27D /* Security.framework */; };
 		C14224C31C40B39100A0E27D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C14224C21C40B39100A0E27D /* SystemConfiguration.framework */; };
+		C14224C61C41B4AC00A0E27D /* PasscodeWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C14224C51C41B4AC00A0E27D /* PasscodeWindow.m */; };
 		C14243921C308F1B00480DA3 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C14243911C308F1B00480DA3 /* Photos.framework */; };
 		C142440C1C30D4DB00480DA3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C142440B1C30D4DB00480DA3 /* ExternalAccessory.framework */; };
 		CE4BDFD219AE65A000BBFABA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4BDFD119AE65A000BBFABA /* MapKit.framework */; };
@@ -3015,6 +3016,8 @@
 		C14224BE1C40B36E00A0E27D /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		C14224C01C40B37800A0E27D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C14224C21C40B39100A0E27D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C14224C41C41B4AC00A0E27D /* PasscodeWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasscodeWindow.h; path = passcode/PasscodeWindow.h; sourceTree = "<group>"; };
+		C14224C51C41B4AC00A0E27D /* PasscodeWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasscodeWindow.m; path = passcode/PasscodeWindow.m; sourceTree = "<group>"; };
 		C14243911C308F1B00480DA3 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		C142440B1C30D4DB00480DA3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		CE4BDFD119AE65A000BBFABA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -4575,6 +4578,8 @@
 				C142234C1C386D7B00A0E27D /* WaitingScreenView.h */,
 				C142234D1C386D7B00A0E27D /* WaitingScreenView.m */,
 				C142234E1C386D7B00A0E27D /* wizard */,
+				C14224C41C41B4AC00A0E27D /* PasscodeWindow.h */,
+				C14224C51C41B4AC00A0E27D /* PasscodeWindow.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -6519,6 +6524,7 @@
 				C14224981C39B5E900A0E27D /* AFURLRequestSerialization.m in Sources */,
 				C14224891C39B5E900A0E27D /* MessageDispatcher.m in Sources */,
 				C14224951C39B5E900A0E27D /* AFNetworkReachabilityManager.m in Sources */,
+				C14224C61C41B4AC00A0E27D /* PasscodeWindow.m in Sources */,
 				C11055F21C041259009F0D5A /* README.md in Sources */,
 				C142238D1C386D7B00A0E27D /* PortViewController.m in Sources */,
 				C14223911C386D7B00A0E27D /* StudentProfileViewController.m in Sources */,

@@ -129,7 +129,7 @@ static NSString *kCellIdentifier = @"CellIdentifier";
         [currentItems addObject:item];
     }
     
-    if([AppDelegate shared].sessionAllowEditing == YES){
+    if([AppDelegate shared].isAdmin == YES){
         ItemModel *newitem = [[ItemModel alloc] init];
         newitem.itemID = [NSNumber numberWithInt:NEW_USER_ID];
         newitem.itemname = NSLocalizedString(@"Add new item",nil);
@@ -405,7 +405,7 @@ static NSString *kCellIdentifier = @"CellIdentifier";
         [signinbutton setTitle:item.itemname forState:UIControlStateNormal];
         signinbutton.titleLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:22.0];
         
-        if([AppDelegate shared].sessionAllowEditing == YES){
+        if([AppDelegate shared].isAdmin == YES){
             UIButton *userProfileButton = [UIButton buttonWithType:UIButtonTypeCustom];
             userProfileButton.frame = CGRectMake(signinbutton.frame.size.width - [UIImage imageNamed:@"selectpicture"].size.width - 5,signinbutton.frame.size.height - [UIImage imageNamed:@"selectpicture"].size.height - 5,[UIImage imageNamed:@"selectpicture"].size.width, [UIImage imageNamed:@"selectpicture"].size.height);
             [userProfileButton addTarget:self action:@selector(chooseImageSource:) forControlEvents:UIControlEventTouchUpInside];

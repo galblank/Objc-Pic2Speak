@@ -11,7 +11,7 @@
 
 @implementation ScrollItemView
 
-@synthesize imageView;
+@synthesize imageView,username;
 
 - (id)initWithFrame:(CGRect)frame andType:(ItemType)iType
 {
@@ -38,12 +38,20 @@
                 imageView.contentMode = UIViewContentModeScaleAspectFit;
                 imageView.userInteractionEnabled = YES;
                 [self addSubview:imageView];
+                if([AppDelegate shared].isAdmin){
                 UILabel * lbl = [[UILabel alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.y + imageView.frame.size.height + 10, imageView.frame.size.width,80)];
                 lbl.numberOfLines = 0;
                 lbl.textAlignment = NSTextAlignmentCenter;
                 lbl.font = [UIFont fontWithName:systemFont size:25];
                 lbl.text = NSLocalizedString(@"Tap smiley to change picture", nil);
                 [self addSubview:lbl];
+                
+                username = [[UITextField alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, self.frame.size.height - 60, imageView.frame.size.width,40)];
+                username.textAlignment = NSTextAlignmentCenter;
+                username.font = [UIFont fontWithName:systemFont size:25];
+                username.placeholder = NSLocalizedString(@"Tap to edit name", nil);
+                [self addSubview:username];
+                }
             }
                 break;
             case ITEMTYPE_ITEM:

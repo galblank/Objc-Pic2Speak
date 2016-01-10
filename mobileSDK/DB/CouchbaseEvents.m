@@ -45,6 +45,9 @@
     if (newRevision) {
         NSLog(@"Document created and written to database, ID = %@", docID);
     }
+    else{
+        NSLog(@"Error creating document %@",error.description);
+    }
     return docID;
 }
 
@@ -68,10 +71,57 @@
     return YES;
 }
 
-- (BOOL)helloCBL {
-    NSString* docID = [self createDocument:CBObjects.sharedInstance.database];
+- (BOOL) addAttachment: (CBLDatabase *) database documentId: (NSString *) documentId {
+    NSError *error;
+    // 1
+    CBLDocument *getDocument = [database documentWithID: documentId];
+    // 2
+    const unsigned char bytes[] = {0, 0, 0, 0, 0};
+    NSData *zerosData = [NSData dataWithBytes: bytes length: sizeof(bytes)];
+    // 3
+    CBLUnsavedRevision *unsavedRev = [getDocument.currentRevision createRevision];
+    [unsavedRev setAttachmentNamed: @"zeros.bin"
+                   withContentType: @"application/octet-stream" content: zerosData];
+    // 4
+    CBLSavedRevision *newRev = [unsavedRev save: &error];
+    NSLog(@"The new revision of the document contains: %@", newRev.properties);
+    return YES;
+}
+
+- (BOOL) deleteDocument:(CBLDatabase*) database documentId:(NSString*) documentId {
+    CBLDocument* document = [database documentWithID:documentId];
+    NSError* error;
+    [document deleteDocument:&error];
+    if (!error) {
+        NSLog(@"Deleted document, deletion status is %d", [document isDeleted]);
+        return YES;
+    }
     return NO;
 }
 
+- (BOOL)helloCBL {
+    NSString* docID = [self createDocument:CBObjects.sharedInstance.database];
+    [self updateDocument:CBObjects.sharedInstance.database documentId:docID];
+    [self addAttachment:CBObjects.sharedInstance.database documentId:docID];
+    [self deleteDocument:CBObjects.sharedInstance.database documentId:docID];
+    
+    return NO;
+}
+
+
+////////////SYNCING///////////////
+-(void) startReplications {
+    // 1
+    NSURL *syncURL = [[NSURL alloc] initWithString:@"http://localhost:4984/couchbaseevents"];
+    // 2
+    CBLReplication *pull = [CBObjects.sharedInstance.database createPullReplication:syncURL];
+    CBLReplication *push = [CBObjects.sharedInstance.database createPushReplication:syncURL];
+    // 3
+    pull.continuous = YES;
+    push.continuous = YES;
+    // 4
+    [pull start];
+    [push start];
+}
 
 @end

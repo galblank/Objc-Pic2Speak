@@ -20,7 +20,7 @@
 
 @implementation AppDelegate
 
-@synthesize username,apnskey,userlocation,userID,familyiID,lastLocation,emergencyNumbers,nGlobalUserCounter,sessionAllowEditing;
+@synthesize username,apnskey,userlocation,userID,familyiID,lastLocation,emergencyNumbers,nGlobalUserCounter,isAdmin;
 
 AppDelegate *shared = nil;
 
@@ -39,7 +39,7 @@ AppDelegate *shared = nil;
     
     [self readUserDefaults];
     
-    self.sessionAllowEditing = NO;
+    self.isAdmin = NO;
     
     return (self);
 }
@@ -115,7 +115,6 @@ AppDelegate *shared = nil;
     mainNavigationController.navigationBar.translucent = NO;
     mainNavigationController.navigationBar.barTintColor = themeColor;
     mainNavigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
     self.window.rootViewController = mainNavigationController;
     
     
@@ -174,7 +173,64 @@ AppDelegate *shared = nil;
     
     
     [self.window makeKeyAndVisible];
+    [self showAdminButton];
+    
     return YES;
+}
+
+-(void)showAdminButton
+{
+    adminButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [adminButton setBackgroundImage:[UIImage imageNamed:@"admin"] forState:UIControlStateNormal];
+    [adminButton addTarget:self action:@selector(loginadmin) forControlEvents:UIControlEventTouchUpInside];
+    adminButton.frame = CGRectMake([UIApplication sharedApplication].keyWindow.frame.size.width - [UIImage imageNamed:@"admin"].size.width - 10,[UIApplication sharedApplication].keyWindow.frame.size.height - [UIImage imageNamed:@"admin"].size.height - 10,[UIImage imageNamed:@"admin"].size.width, [UIImage imageNamed:@"admin"].size.height);
+    [[UIApplication sharedApplication].keyWindow addSubview:adminButton];
+}
+
+-(void)cancel
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        passcodeWin.frame = CGRectMake(passcodeWin.center.x - 150, passcodeWin.center.y - 150, 0, 0);
+        [passcodeWin removeFromSuperview];
+    }];
+}
+
+-(void) submitcode:(NSString*)text
+{
+    NSString * code = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"admincode"];
+    if([code isEqualToString:text]){
+        self.isAdmin = YES;
+        [self cancel];
+    }
+    else{
+        passcodeWin.codeField.text = @"";
+        CABasicAnimation *animation =
+        [CABasicAnimation animationWithKeyPath:@"position"];
+        [animation setDuration:0.05];
+        [animation setRepeatCount:8];
+        [animation setAutoreverses:YES];
+        [animation setFromValue:[NSValue valueWithCGPoint:
+                                 CGPointMake([passcodeWin center].x - 20.0f, [passcodeWin center].y)]];
+        [animation setToValue:[NSValue valueWithCGPoint:
+                               CGPointMake([passcodeWin center].x + 20.0f, [passcodeWin center].y)]];
+        [[passcodeWin layer] addAnimation:animation forKey:@"position"];
+    }
+}
+
+
+-(void)loginadmin
+{
+    NSLog(@"Login admin");
+    if(passcodeWin == nil){
+        passcodeWin = [[PasscodeWindow alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        passcodeWin.center = [UIApplication sharedApplication].keyWindow.center;
+        passcodeWin.pwdDelegate = self;
+    }
+        [UIView animateWithDuration:0.3 animations:^{
+            passcodeWin.frame = CGRectMake([UIApplication sharedApplication].keyWindow.center.x - 150, [UIApplication sharedApplication].keyWindow.center.y - 150, 300, 300);
+            [[UIApplication sharedApplication].keyWindow addSubview:passcodeWin];
+        }];
+
 }
 
 #ifdef __IPHONE_8_0

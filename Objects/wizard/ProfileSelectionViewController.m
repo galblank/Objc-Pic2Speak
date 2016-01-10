@@ -70,7 +70,7 @@
         NSLog(@"%f",previousX + x + horizontalpadding);
         float height = self.view.frame.size.height - (topPadding + bottomPadding);
         ScrollItemView *item = [[ScrollItemView alloc] initWithFrame:CGRectMake(x + horizontalpadding,topPadding,width,height) andType:ITEMTYPE_USER];
-        item.backgroundColor = [UIColor greenColor];
+        item.backgroundColor = pastelGreenColor;
         previousX = item.frame.origin.x;
         
         //item.clipsToBounds = YES;

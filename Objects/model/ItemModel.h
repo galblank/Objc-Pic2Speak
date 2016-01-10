@@ -10,6 +10,17 @@
 #import <MapKit/MapKit.h>
 #import <MapKit/MKReverseGeocoder.h>
 
+/*
+ category
+ id
+ name
+ content_ids<Array of content ids>
+ subcat_ids<Array of ids>
+ parentcat_ids<Array of ids>
+ image
+ sound
+ */
+
 @interface ItemModel : NSObject
 
 @property(nonatomic,strong)NSString *itemname;
