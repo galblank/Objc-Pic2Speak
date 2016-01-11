@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(consumeMessage:) name:@"internal.unlockadminmode" object:nil];
     usersScrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
     usersScrollView.pagingEnabled = YES;
     usersScrollView.bounces = YES;
@@ -33,6 +33,15 @@
     [self loadImagesForJustView];
     
     
+}
+
+-(void)consumeMessage:(NSNotification*)notif
+{
+    Message * msg = [notif.userInfo objectForKey:@"message"];
+    
+    if([msg.routingKey caseInsensitiveCompare:@"internal.unlockadminmode"] == NSOrderedSame){
+        
+    }
 }
 
 

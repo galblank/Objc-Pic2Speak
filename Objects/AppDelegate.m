@@ -199,7 +199,12 @@ AppDelegate *shared = nil;
 {
     NSString * code = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"admincode"];
     if([code isEqualToString:text]){
-        self.isAdmin = YES;
+        self.isAdmin = !self.isAdmin;
+        passcodeWin.codeField.text = @"";
+        Message * msg = [[Message alloc] init];
+        msg.routingKey = @"internal.unlockadminmode";
+        msg.ttl = TTL_NOW;
+        [[MessageDispatcher sharedInstance] addMessageToBus:msg];
         [self cancel];
     }
     else{
@@ -207,7 +212,7 @@ AppDelegate *shared = nil;
         CABasicAnimation *animation =
         [CABasicAnimation animationWithKeyPath:@"position"];
         [animation setDuration:0.05];
-        [animation setRepeatCount:8];
+        [animation setRepeatCount:5];
         [animation setAutoreverses:YES];
         [animation setFromValue:[NSValue valueWithCGPoint:
                                  CGPointMake([passcodeWin center].x - 20.0f, [passcodeWin center].y)]];
