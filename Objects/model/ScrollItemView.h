@@ -17,6 +17,7 @@ typedef enum {
 @interface ScrollItemView : UIView
 {
     UILabel * changePicLabel;
+    UIButton * saveButton;
 }
 
 @property(nonatomic,strong)UIImageView *imageView;

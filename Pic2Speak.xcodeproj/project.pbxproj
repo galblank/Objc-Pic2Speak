@@ -1457,7 +1457,7 @@
 		C14224A81C39B5E900A0E27D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C14224801C39B5E900A0E27D /* README.md */; };
 		C14224AB1C39B69600A0E27D /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = C14224AA1C39B69600A0E27D /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C14224AF1C3CA8A500A0E27D /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C14224AE1C3CA8A500A0E27D /* DBManager.m */; };
-		C14224B11C3CA8D100A0E27D /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C14224B01C3CA8D100A0E27D /* db.sqlite */; };
+		C14224B11C3CA8D100A0E27D /* pic2speak.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C14224B01C3CA8D100A0E27D /* pic2speak.sqlite */; };
 		C14224B31C3CAB6400A0E27D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C14224B21C3CAB6400A0E27D /* libsqlite3.0.tbd */; };
 		C14224B51C409F1F00A0E27D /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C14224B41C409F1F00A0E27D /* CouchbaseLite.framework */; };
 		C14224B81C40A2A200A0E27D /* CouchbaseEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = C14224B71C40A2A200A0E27D /* CouchbaseEvents.m */; };
@@ -3005,7 +3005,7 @@
 		C14224AA1C39B69600A0E27D /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		C14224AD1C3CA8A500A0E27D /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		C14224AE1C3CA8A500A0E27D /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
-		C14224B01C3CA8D100A0E27D /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		C14224B01C3CA8D100A0E27D /* pic2speak.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = pic2speak.sqlite; sourceTree = "<group>"; };
 		C14224B21C3CAB6400A0E27D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		C14224B41C409F1F00A0E27D /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CouchbaseLite.framework; sourceTree = "<group>"; };
 		C14224B61C40A2A200A0E27D /* CouchbaseEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchbaseEvents.h; sourceTree = "<group>"; };
@@ -4939,7 +4939,7 @@
 			isa = PBXGroup;
 			children = (
 				C14224B41C409F1F00A0E27D /* CouchbaseLite.framework */,
-				C14224B01C3CA8D100A0E27D /* db.sqlite */,
+				C14224B01C3CA8D100A0E27D /* pic2speak.sqlite */,
 				C14224AD1C3CA8A500A0E27D /* DBManager.h */,
 				C14224AE1C3CA8A500A0E27D /* DBManager.m */,
 				C14224B61C40A2A200A0E27D /* CouchbaseEvents.h */,
@@ -6001,7 +6001,7 @@
 				C110542F1C041259009F0D5A /* AWSS3Initiator.html in Resources */,
 				C11055ED1C041259009F0D5A /* Amazon Software License.txt in Resources */,
 				C11055471C041259009F0D5A /* AWSEC2CurrencyCodeValues.html in Resources */,
-				C14224B11C3CA8D100A0E27D /* db.sqlite in Resources */,
+				C14224B11C3CA8D100A0E27D /* pic2speak.sqlite in Resources */,
 				C110517D1C041259009F0D5A /* AWSCognitoSyncSetCognitoEventsRequest.html in Resources */,
 				C11050DC1C041259009F0D5A /* AWSAutoScalingDeletePolicyType.html in Resources */,
 				C11050E11C041259009F0D5A /* AWSAutoScalingDescribeAutoScalingInstancesType.html in Resources */,

@@ -1,6 +1,6 @@
 //
 //  DBManager.h
-//  re:group'd
+//  GoEmerchant.com
 //
 //  Created by Gal Blank on 12/19/14.
 //  Copyright (c) 2014 Gal Blank. All rights reserved.
@@ -12,37 +12,35 @@
 
 
 
-#define LOCAL_DB_FILE_NAME     @"bpages"
+#define LOCAL_DB_FILE_NAME     @"pic2speak"
 #define LOCAL_DB_FILE_EXT      @"sqlite"
 #define DB_BUNDLE_VERSION_KEY  @"kDB_BUNDLE_VERSION_KEY"
-#define DB_QUEUE_NAME          "com.goe.app.dbqueue"
+#define DB_QUEUE_NAME          "com.galblank.app.dbqueue"
 
 
 @interface DBManager : NSObject
 {
     NSString *databaseFullPath;
-    //sqlite3 *sqlite3Database;
-    //int openDatabaseResult;
+    int affectedRows;
+    NSString *documentsDirectory;
     
-    //dispatch_semaphore_t semaphore;
+    NSMutableDictionary * arraysmatrix;
+    NSMutableDictionary * currentIndexMatrix;
+    dispatch_queue_t databaseQueue;
+    
+    int currentMatrixIndex;
 }
--(instancetype)initWithDatabaseFilename:(NSString *)dbFilename;
--(void)copyDatabaseIntoDocumentsDirectory;
+
+@property(nonatomic)long long lastInsertedRowID;
+
 -(void)runQuery:(const char *)query isQueryExecutable:(BOOL)queryExecutable;
--(NSMutableArray *)loadDataFromDB:(NSString *)query;
+-(int)loadDataFromDB:(NSString *)query;
 -(void)executeQuery:(NSString *)query;
 -(void)deleteAllDataFromDB;
-
+-(id)getValueForColumnName:(NSString*)name;
+-(NSMutableDictionary*)nextForIndex:(int)matrixIndex;
+-(BOOL)hasDataForIndex:(int)matrixIndex;
+-(int)rowCountForIndex:(int)matrixIndex;
 + (DBManager *)sharedInstance;
-
-@property (nonatomic, strong) NSMutableArray *arrColumnNames;
-@property (nonatomic) int affectedRows;
-@property (nonatomic) long long lastInsertedRowID;
-
-@property (nonatomic, strong) NSString *documentsDirectory;
-@property (nonatomic, strong) NSString *databaseFilename;
-@property (nonatomic, strong) NSMutableArray *arrResults;
-
-@property (nonatomic, strong) dispatch_queue_t databaseQueue;
 
 @end

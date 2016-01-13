@@ -11,6 +11,7 @@
 @interface ProfileSelectionViewController : UIViewController
 {
     UIScrollView *usersScrollView;
+    NSMutableArray * usersArray;
     NSInteger selectedStudentIndex;
 }
 @end

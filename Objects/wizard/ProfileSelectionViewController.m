@@ -9,7 +9,7 @@
 #import "ProfileSelectionViewController.h"
 #import "AppDelegate.h"
 #import "ScrollItemView.h"
-
+#import "DBManager.h"
 @interface ProfileSelectionViewController ()
 
 @end
@@ -30,6 +30,17 @@
     selectedStudentIndex = -1;
     [self.view addSubview:usersScrollView];
     
+    int index = [[DBManager sharedInstance] loadDataFromDB:@"select * from users"];
+    usersArray = [[NSMutableArray alloc] init];
+    
+    while([[DBManager sharedInstance] hasDataForIndex:index]){
+        NSMutableDictionary * row = [[DBManager sharedInstance] nextForIndex:index];
+        [usersArray addObject:row];
+    }
+    
+    if(usersArray.count == 1){
+        [AppDelegate shared].isAdmin = YES;
+    }
     [self loadImagesForJustView];
     
     
@@ -73,8 +84,8 @@
     CGFloat bottomPadding = topPadding * 2;
     CGFloat width = self.view.frame.size.width / 3;
     CGFloat previousX = 0;
-    for(int i=0;i< 5/*[AppDelegate shared].nGlobalUserCounter.intValue*/; i++) {
-        
+    for(int i=0;i< usersArray.count; i++) {
+        NSMutableDictionary * user = usersArray[i];
         CGFloat x = previousX > 0?previousX + width:0;
         NSLog(@"%f",previousX + x + horizontalpadding);
         float height = self.view.frame.size.height - (topPadding + bottomPadding);

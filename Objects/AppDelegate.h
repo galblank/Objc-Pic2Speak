@@ -13,6 +13,7 @@
 #import "ProfileModel.h"
 #import "Pic2Speak-Swift.h"
 #import "MessageDispatcher.h"
+#import "DBManager.h"
 #import "passcode/PasscodeWindow.h"
 
 #define pastelGreenColor [UIColor colorWithRed:113.0 / 255.0 green:222.0 / 255.0 blue:149.0 / 255.0 alpha:1];

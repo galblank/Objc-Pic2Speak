@@ -50,6 +50,19 @@
                 changePicLabel.text = NSLocalizedString(@"Tap smiley to change picture", nil);
                 [self addSubview:changePicLabel];
                 
+                saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+                saveButton.frame = CGRectMake(changePicLabel.center.x - 60, changePicLabel.frame.origin.y + changePicLabel.frame.size.height + 10, 120,120);
+                [saveButton addTarget:self action:@selector(saveUser:) forControlEvents:UIControlEventTouchUpInside];
+                saveButton.layer.cornerRadius = 60;
+                saveButton.layer.borderColor = [UIColor whiteColor].CGColor;
+                saveButton.layer.borderWidth = 3.0;
+                [saveButton setTitle:NSLocalizedString(@"Save", nil) forState:UIControlStateNormal];
+                saveButton.titleLabel.font = [UIFont fontWithName:systemFont size:20];
+                
+                saveButton.layer.masksToBounds = YES;
+                saveButton.enabled = [AppDelegate shared].isAdmin;
+                [self addSubview:saveButton];
+                
                 username = [[UITextField alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, self.frame.size.height - 60, imageView.frame.size.width,40)];
                 username.textAlignment = NSTextAlignmentCenter;
                 username.font = [UIFont fontWithName:systemFont size:25];
@@ -66,6 +79,13 @@
         }
     }
     return self;
+}
+
+-(void)saveUser:(UIButton*)btn
+{
+    NSString * query = [NSString stringWithFormat:@"insert into users (firstname,lastname,avatarurl,age,nickname) values(\"%@\",\"%@\",\"%@\",%d,\"%@\")",username.text,username.text,imageView.image,5,username.text];
+    [[DBManager sharedInstance] executeQuery:query];
+    
 }
 
 -(void)consumeMessage:(NSNotification*)notif
