@@ -98,10 +98,18 @@
 
 -(void)tappedOnItem:(UIGestureRecognizer*)gesture
 {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedImage:) name:@"internal.selectedimage" object:nil];
     selectedStudentIndex = gesture.view.tag;
     NSLog(@"tapped %ld",(long)selectedStudentIndex);
-    [[AppDelegate shared] chooseImage];
+    if([AppDelegate shared].isAdmin){
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedImage:) name:@"internal.selectedimage" object:nil];
+        [[AppDelegate shared] chooseImage];
+    }
+    else{
+        Message * msg = [[Message alloc] init];
+        msg.routingKey = @"internal.selecteduser";
+        msg.ttl = TTL_NOW;
+        [[MessageDispatcher sharedInstance] addMessageToBus:msg];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

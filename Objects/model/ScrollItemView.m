@@ -53,7 +53,7 @@
                 username = [[UITextField alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, self.frame.size.height - 60, imageView.frame.size.width,40)];
                 username.textAlignment = NSTextAlignmentCenter;
                 username.font = [UIFont fontWithName:systemFont size:25];
-                username.hidden = ![AppDelegate shared].isAdmin;
+                username.enabled = [AppDelegate shared].isAdmin;
                 username.placeholder = NSLocalizedString(@"Tap to edit name", nil);
                 [self addSubview:username];
                 
@@ -74,7 +74,7 @@
     
     if([msg.routingKey caseInsensitiveCompare:@"internal.unlockadminmode"] == NSOrderedSame){
         changePicLabel.hidden = ![AppDelegate shared].isAdmin;
-        username.hidden = ![AppDelegate shared].isAdmin;
+        username.enabled = [AppDelegate shared].isAdmin;
     }
 }
 /*

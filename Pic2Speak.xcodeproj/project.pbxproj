@@ -2906,8 +2906,8 @@
 		C14223351C386D7B00A0E27D /* ItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemModel.m; sourceTree = "<group>"; };
 		C14223361C386D7B00A0E27D /* ProfileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileModel.h; sourceTree = "<group>"; };
 		C14223371C386D7B00A0E27D /* ProfileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileModel.m; sourceTree = "<group>"; };
-		C14223381C386D7B00A0E27D /* ScrollItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollItemView.h; sourceTree = "<group>"; };
-		C14223391C386D7B00A0E27D /* ScrollItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollItemView.m; sourceTree = "<group>"; };
+		C14223381C386D7B00A0E27D /* ScrollItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollItemView.h; path = model/ScrollItemView.h; sourceTree = "<group>"; };
+		C14223391C386D7B00A0E27D /* ScrollItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollItemView.m; path = model/ScrollItemView.m; sourceTree = "<group>"; };
 		C142233D1C386D7B00A0E27D /* PhotosScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosScrollView.h; sourceTree = "<group>"; };
 		C142233E1C386D7B00A0E27D /* PhotosScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosScrollView.m; sourceTree = "<group>"; };
 		C14223411C386D7B00A0E27D /* PortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortViewController.h; sourceTree = "<group>"; };
@@ -4564,7 +4564,8 @@
 				C14223111C386D7B00A0E27D /* JSONLIB */,
 				C14223321C386D7B00A0E27D /* main.m */,
 				C14223331C386D7B00A0E27D /* model */,
-				C142233A1C386D7B00A0E27D /* Network */,
+				C14223381C386D7B00A0E27D /* ScrollItemView.h */,
+				C14223391C386D7B00A0E27D /* ScrollItemView.m */,
 				C142233D1C386D7B00A0E27D /* PhotosScrollView.h */,
 				C142233E1C386D7B00A0E27D /* PhotosScrollView.m */,
 				C14223411C386D7B00A0E27D /* PortViewController.h */,
@@ -4713,33 +4714,8 @@
 				C14223351C386D7B00A0E27D /* ItemModel.m */,
 				C14223361C386D7B00A0E27D /* ProfileModel.h */,
 				C14223371C386D7B00A0E27D /* ProfileModel.m */,
-				C14223381C386D7B00A0E27D /* ScrollItemView.h */,
-				C14223391C386D7B00A0E27D /* ScrollItemView.m */,
 			);
 			path = model;
-			sourceTree = "<group>";
-		};
-		C142233A1C386D7B00A0E27D /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				C142233B1C386D7B00A0E27D /* AFNetworking */,
-				C142233C1C386D7B00A0E27D /* UIKit+AFNetworking */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		C142233B1C386D7B00A0E27D /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		C142233C1C386D7B00A0E27D /* UIKit+AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
 		C142234E1C386D7B00A0E27D /* wizard */ = {
