@@ -22,5 +22,5 @@ typedef enum {
 
 @property(nonatomic,strong)UIImageView *imageView;
 @property(nonatomic,strong)UITextField *username;
-- (id)initWithFrame:(CGRect)frame andType:(ItemType)iType;
+- (id)initWithFrame:(CGRect)frame andType:(ItemType)iType andUser:(NSMutableDictionary*)user;
 @end

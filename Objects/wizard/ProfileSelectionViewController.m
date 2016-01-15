@@ -70,6 +70,8 @@
         for(ScrollItemView * item in usersScrollView.subviews){
             if(item.tag == selectedStudentIndex){
                 item.imageView.image = [msg.params objectForKey:@"image"];
+                NSString * str = [msg.params objectForKey:@"imageurl"];
+                
                 break;
             }
         }
@@ -89,10 +91,9 @@
         CGFloat x = previousX > 0?previousX + width:0;
         NSLog(@"%f",previousX + x + horizontalpadding);
         float height = self.view.frame.size.height - (topPadding + bottomPadding);
-        ScrollItemView *item = [[ScrollItemView alloc] initWithFrame:CGRectMake(x + horizontalpadding,topPadding,width,height) andType:ITEMTYPE_USER];
+        ScrollItemView *item = [[ScrollItemView alloc] initWithFrame:CGRectMake(x + horizontalpadding,topPadding,width,height) andType:ITEMTYPE_USER andUser:user];
         item.backgroundColor = pastelGreenColor;
         previousX = item.frame.origin.x;
-        
         //item.clipsToBounds = YES;
         item.tag = i;
         item.restorationIdentifier = [NSString stringWithFormat:@"%d",i];
@@ -117,7 +118,8 @@
     }
     else{
         Message * msg = [[Message alloc] init];
-        msg.routingKey = @"internal.selecteduser";
+        msg.routingKey = @"internal.gotoview";
+        msg.params = @{@"gotoview":@"sections"};
         msg.ttl = TTL_NOW;
         [[MessageDispatcher sharedInstance] addMessageToBus:msg];
     }

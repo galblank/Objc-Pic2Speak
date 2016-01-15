@@ -13,7 +13,7 @@
 
 @synthesize imageView,username;
 
-- (id)initWithFrame:(CGRect)frame andType:(ItemType)iType
+- (id)initWithFrame:(CGRect)frame andType:(ItemType)iType andUser:(NSMutableDictionary*)user
 {
     self = [super initWithFrame:frame];
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -35,7 +35,7 @@
                 break;
             case ITEMTYPE_USER:
             {
-                UIImage * smiley = [UIImage imageNamed:@"smiley"];
+                UIImage * smiley = [UIImage imageNamed:[user objectForKey:@"avatarurl"]];
                 self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.frame.size.width - smiley.size.width) / 2, 20, smiley.size.width, smiley.size.height)];
                 imageView.image = smiley;
                 imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -67,7 +67,7 @@
                 username.textAlignment = NSTextAlignmentCenter;
                 username.font = [UIFont fontWithName:systemFont size:25];
                 username.enabled = [AppDelegate shared].isAdmin;
-                username.placeholder = NSLocalizedString(@"Tap to edit name", nil);
+                username.placeholder = [user objectForKey:@"nickname"];
                 [self addSubview:username];
                 
             }
@@ -85,7 +85,6 @@
 {
     NSString * query = [NSString stringWithFormat:@"insert into users (firstname,lastname,avatarurl,age,nickname) values(\"%@\",\"%@\",\"%@\",%d,\"%@\")",username.text,username.text,imageView.image,5,username.text];
     [[DBManager sharedInstance] executeQuery:query];
-    
 }
 
 -(void)consumeMessage:(NSNotification*)notif

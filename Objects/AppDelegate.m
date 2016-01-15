@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SBJson.h"
 #import "CouchbaseEvents.h"
+#import "SectionsViewController.h"
 
 @import Photos;
 
@@ -174,9 +175,38 @@ AppDelegate *shared = nil;
     
     [self.window makeKeyAndVisible];
     [self showAdminButton];
+ 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(consumeMessage:) name:@"internal.switchnavigator" object:nil];
+    
+    
     
     return YES;
 }
+
+
+-(void)consumeMessage:(NSNotification*)notif
+{
+    Message * msg = [notif.userInfo objectForKey:@"message"];
+    
+    if([msg.routingKey caseInsensitiveCompare:@"internal.gotoview"]){
+        UIViewController * nextController = nil;
+        NSString * gotoview = [msg.params objectForKey:@"gotoview"];
+        if([gotoview isEqualToString:@"sections"]){
+            nextController = [[SectionsViewController alloc] init];
+        }
+
+        [[self topViewController].navigationController presentViewController:nextController animated:YES completion:^{
+            
+        }];
+    }
+    else if([msg.routingKey caseInsensitiveCompare:@"internal.switchnavigator"]){
+        
+    }
+    else if([msg.routingKey caseInsensitiveCompare:@"internal.switchnavigator"]){
+        
+    }
+}
+
 
 -(void)showAdminButton
 {

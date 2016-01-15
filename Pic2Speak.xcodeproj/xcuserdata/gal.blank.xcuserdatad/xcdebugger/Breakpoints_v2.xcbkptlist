@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Objects/model/ScrollItemView.m"
-            timestampString = "474353793.284391"
+            filePath = "mobileSDK/Helpers/photobrowser/PhotoBrowser.swift"
+            timestampString = "474519854.832259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-saveUser:"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
+            landmarkName = "imageRequestResultHandler(_:properties:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

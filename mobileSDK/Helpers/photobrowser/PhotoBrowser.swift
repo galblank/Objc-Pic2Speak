@@ -301,6 +301,7 @@ class PhotoBrowser: UIViewController
     func imageRequestResultHandler(image: UIImage?, properties: [NSObject: AnyObject]?)
     {
         let tempImage = image! as UIImage
+        NSLog("%@", properties!)
         if let delegate = delegate, image = image, selectedAssetLocalIdentifier = selectedAsset?.localIdentifier
         {
             PhotoBrowser.executeInMainQueue
@@ -309,10 +310,12 @@ class PhotoBrowser: UIViewController
                 
             }
         }
+        
+        let fileUrl = properties!["PHImageFileURLKey"] as! String
         // TODO : Handle no image case (asset is broken in iOS)
         let msg:Message = Message()
         msg.routingKey = "internal.selectedimage"
-        msg.params = ["image" : tempImage]
+        msg.params = ["image" : tempImage,"imageurl" : fileUrl]
         msg.ttl = 0.1
         MessageDispatcher.sharedInstance().addMessageToBus(msg)
         
